@@ -1,0 +1,85 @@
+body{
+    background-image: url('../assets/cats-and-dragons.png');
+}
+
+#board{
+    display: grid;
+    grid-auto-flow: column;
+    padding: 5px;
+    min-height: 80vh;
+    
+}
+
+.tile{
+    min-width: 50px;
+    min-height: 50px;
+    border-style: groove;
+    background-color: blanchedalmond;
+}
+
+.gold{
+    background-color: gold;
+    text-align: center;  
+}
+
+.player1{
+    background-color: blanchedalmond;;
+    text-align: center;
+}
+
+.player2{
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+.wall{
+    background-color: #e1bee7;
+    text-align: center;
+}
+
+div > i{
+    justify-self: center;
+    align-self: center;
+}
+
+#control{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#score{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#score p {
+    border-style: groove;
+    justify-self: center;
+    align-self: center;
+    padding: 1em;
+    background-color: blanchedalmond;
+}
+
+#setup{
+    border-style: groove;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-self: center;
+    align-self: center;
+    background-color: blanchedalmond;
+    padding: 0.1em;
+}
+
+#setup p{
+    justify-self: center;
+    align-self: center;
+    
+}
+
+button{
+    background-color: #e1bee7;
+    cursor: pointer;
+}
+
+
+
