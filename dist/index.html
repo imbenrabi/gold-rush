@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/57722bdb99.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Gold Rush</title>
+</head>
+
+<body>
+    <div id="board"></div>
+    <div id="control">
+        <div id="score"></div>
+        <div id="setup">
+            <p>Want To Go Again?</p>
+            <input type="number" id="row-input" placeholder="number of rows">
+            <input type="number" id="col-input" placeholder="number of columns">
+            <button id="start-btn">Start New Game</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+    <script src="./utils/getRandomInt.js"></script>
+    <script src="./utils/isTileOccupied.js"></script>
+    <script src="./js/Matrix.js"></script>
+    <script src="./js/GoldRush.js"></script>
+    <script src="./js/Renderer.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
