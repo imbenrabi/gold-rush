@@ -29,7 +29,6 @@ class GoldRush extends Matrix {
             amount: getRandomInt(numRows * numColoumns * GOLD_RATIO) + 1,
             coordinates: []
         }
-
         this.walls = {
             amount: getRandomInt(numRows * numColoumns * WALLS_RATIO) + 1,
             coordinates: []
@@ -40,53 +39,43 @@ class GoldRush extends Matrix {
 
     loadBoard(numRows, numColoumns) {
         let matrix = []
-
         for (let r = 0; r < numRows; r++) {
             matrix.push([]);
 
             for (let c = 0; c < numColoumns; c++) {
                 matrix[r].push('.')
             }
-
         }
-
         matrix = this.setGold(matrix);
         matrix = this.setWalls(matrix);
         matrix = this.setPlayers(matrix);
 
         return matrix;
-
     }
 
     setGold(matrix) {
         for (let g = 0; g < this.gold.amount; g++) {
             let coordinate = [getRandomInt(this.numRows - 1) + 1, getRandomInt(this.numColoumns - 1)];
-
             while (isTileOccuoied(this.gold.coordinates, coordinate) || coordinate === this.startingPosition.player1 || coordinate === this.startingPosition.player2) {
                 coordinate = [getRandomInt(this.numRows - 1), getRandomInt(this.numColoumns - 1)];
             }
 
             this.gold.coordinates.push(coordinate);
             matrix[coordinate[0]][coordinate[1]] = 'g';
-
         }
-
         return matrix;
     }
 
     setWalls(matrix) {
         for (let w = 0; w < this.walls.amount; w++) {
             let coordinate = [getRandomInt(this.numRows - 1) + 1, getRandomInt(this.numColoumns - 1)];
-
             while (this.isBlockingWall(matrix, coordinate) || isTileOccuoied(this.walls.coordinates, coordinate) || isTileOccuoied(this.gold.coordinates, coordinate) || coordinate === this.startingPosition.player1 || coordinate === this.startingPosition.player2) {
                 coordinate = [getRandomInt(this.numRows - 1), getRandomInt(this.numColoumns - 1)];
             }
 
             this.walls.coordinates.push(coordinate);
             matrix[coordinate[0]][coordinate[1]] = 'w';
-
         }
-
         return matrix;
     }
 
@@ -250,9 +239,6 @@ class GoldRush extends Matrix {
         if (goldIndex !== -1) {
             this.players[player].score += 10;
             this.gold.coordinates.splice(goldIndex, 1)
-
         }
-
     }
-
 }
